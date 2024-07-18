@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function userName() {
+          console.log("pradeep kumar kairamkonda");
+        }
+        userName();
+        userName();
+        userName();
+
+        function glassName(x, y) {
+            console.log(x, y);
+            let glass = `The cost of glass is ${x} and tax for glass is ${y}`;
+            return glass;
+        }
+        let result = glassName(20,2);
+        console.log(result);
+
+        // task-2
+
+        let asprirantName = "mani";
+
+        function rank(name) {
+           asprirantName = "pradeep";
+           let output = name + " "+ asprirantName;
+           return output;
+        }
+
+        console.log(asprirantName);
+        let printOutput = rank('k');
+        console.log(printOutput);
+        console.log(asprirantName)
+
+        // function expression
+
+        // function without name is called anynomous function.
+
+        let motel = function(name) {
+            return name;
+        }
+        let motelName = motel("super8");
+        console.log(motelName)
+
+        // We can copy a function to another variable:
+
+        function myName(name) {
+            return name;
+        } 
+
+        let otherName = myName; //  copy
+
+        console.log(otherName("pradeep Kumar Kairamkonda"));
+        console.log(myName("pradeep Kumar Kairamkonda"));
+
+        // arrow functions
+
+       //  let func = (arg1, arg2, ..., argN) => expression; 
+
+         let add = (a,b) => {
+            return a + b;
+         }
+
+         let result2 =  add(2, 3);
+         console.log(result2);
+
+        // function calling from another function
+
+        function lastName(name) {
+            return  name +  2;
+        }
+
+        function firstName(myName, frindName) {
+            let output3 = lastName(myName);
+            let output4 = lastName(frindName);
+            let output5 = `The ${output3} and  ${output4}`;
+            return output5;
+        }
+
+        console.log(firstName("pradeep", "praneeth"));
+  
+      </script>
+</head>
+<body>
+</body>
+<!-- 
+functions are the main building blocks of the javascript.
+funtions are the piece of code or block of code.
+
+We’ve already seen examples of built-in functions, 
+like alert(message), prompt(message, default) and confirm(question). But we can create functions of our own as well.
+
+The return statement stops the execution of a function and returns a value.
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let openingHours = {
+            mon: {
+                open: "9AM",
+                close: "9PM",
+            },
+            tues: {
+                open: "9AM",
+                close: "9PM",
+            },
+            wed: {
+                open: "5PM",
+                close: "6PM",
+            },
+        };
+
+        const resturant = {
+            name: 'baymont',
+            location: '1811 faytee ave',
+            categories: ['indian', 'italian', 'bengali', 'nodia', 'french'],
+            starterMenu: ['chickentikka', 'garlic fry', 'mutton fry'],
+            mainMenu: ['pizza', 'pasta', 'bread', 'egg', 'mutton briyani'],
+
+            // new way using ES6 methods
+
+            order(staterIndex, mainIndex) {
+                return [this.starterMenu[staterIndex], this.mainMenu[mainIndex]];
+            },
+
+            orderDelivery({ time, address, staterIndex, mainIndex }) {
+                console.log(`order received ${this.starterMenu[staterIndex]} and ${this.mainMenu[mainIndex]} to ${address} at ${time}`);
+            },
+
+            // old way using method
+
+            orderPasta: function (item1, item2, item3) {
+                console.log(`The items is ready ${item1}, ${item2}, and ${item3}`);
+            },
+
+            orderPizza: function (order1, ...order2) {
+                console.log(order1, "###");
+                console.log(order2, "***");
+            },
+
+            // ES6 enhaned object literals
+
+            openingHours,
+        };
+
+        console.log(resturant);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let data = ["pradeep","kumar","Auburn"];
+        console.log(data);
+        console.log(data[0], data[1]);
+
+        let data2 = new Array("promod", "reddy","bommidi");
+        console.log(data2, data2[1], data[2]);
+        
+        // finding a length
+
+        console.log(data2.length);
+ 
+        // Finding last element in array
+
+        console.log(data2[data2.length-1])
+
+        // non-premitive data types are mutable
+
+        data[0] = "Chicago";
+        console.log(data);
+
+        // array methods
+
+        // push adds the end of the array.
+
+        let mobiles = ["iphone", "samsung", "motorola"];
+        mobiles.push("asus");
+        console.log(mobiles);
+        console.log(mobiles.length);
+
+        // unshift adds the beginning of the array
+
+        mobiles.unshift("lenovo");
+        console.log(mobiles);
+
+        // pop deletes end of the array
+
+        mobiles.pop();
+        console.log(mobiles);
+
+        // shift deletes beginning of the array
+
+        mobiles.shift();
+        console.log(mobiles);
+
+        // finding the index of array
+        // It returns -1 if element not find in the array
+
+        console.log(mobiles.indexOf("samsung"));
+
+        // array includes a certain value among its entries, returning true or false
+
+        console.log(mobiles.includes("motorola"));
+        console.log(mobiles.includes("pradeep"));
+
+        if(mobiles.includes("motorola")) {
+            console.log("Motorola phone is there in the array");
+        } else {
+            console.log("No Phone with this Name");
+        }
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

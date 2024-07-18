@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const resturant = {
+            name: 'baymont',
+            location: '1811 faytee ave',
+            categories: ['indian', 'italian', 'bengali', 'nodia', 'french'],
+            starterMenu: ['chickentikka', 'garlic fry', 'mutton fry'],
+            mainMenu: ['pizza', 'pasta', 'bread', 'egg', 'mutton briyani'],
+            openingHours: {
+                mon: {
+                    open: "9AM",
+                    close: "9PM",
+                },
+                tues: {
+                    open: "9AM",
+                    close: "9PM",
+                },
+                wed: {
+                    open: "5PM",
+                    close: "6PM",
+                },
+            },
+
+            order: function (staterIndex, mainIndex) {
+                return [this.starterMenu[staterIndex], this.mainMenu[mainIndex]];
+            },
+
+            orderDelivery: function ({ time, address, staterIndex, mainIndex }) {
+                console.log(`order received ${this.starterMenu[staterIndex]} and ${this.mainMenu[mainIndex]} to ${address} at ${time}`);
+            },
+
+            orderPasta: function (item1, item2, item3) {
+                console.log(`The items is ready ${item1}, ${item2}, and ${item3}`);
+            },
+
+            orderPizza: function (order1, ...order2) {
+                console.log(order1, "###");
+                console.log(order2, "***");
+            },
+        };
+
+        // Property names
+
+        let data = Object.keys(resturant.openingHours);
+        console.log(data);
+
+        /*  for(let key of Object.keys(resturant.openingHours)) {
+             console.log(key)
+         } */
+
+        for (let item of data) {
+            console.log(item);
+        };
+
+
+        // Property values
+
+        let data2 = Object.values(resturant.openingHours);
+        console.log(data2);
+
+        // Entire object
+
+        let data3 = Object.entries(resturant.openingHours);
+        console.log(data3);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const resturant = {
+            name: 'baymont',
+            location: '1811 faytee ave',
+            categories: ['indian', 'italian', 'bengali', 'nodia', 'french'],
+            starterMenu: ['chickentikka', 'garlic fry', 'mutton fry'],
+            mainMenu: ['pizza', 'pasta', 'bread', 'egg', 'mutton briyani'],
+            openingHours: {
+                mon: {
+                    open: "9AM",
+                    close: "9PM",
+                },
+                tues: {
+                    open: "9AM",
+                    close: "9PM",
+                },
+                wed: {
+                    open: "5PM",
+                    close: "6PM",
+                },
+            },
+            order: function (staterIndex, mainIndex) {
+                return [this.starterMenu[staterIndex], this.mainMenu[mainIndex]];
+            },
+            orderDelivery: function ({ time, address, staterIndex, mainIndex }) {
+                console.log(`order received ${this.starterMenu[staterIndex]} and ${this.mainMenu[mainIndex]} to ${address} at ${time}`);
+            }
+        };
+
+        resturant.orderDelivery({
+            time: "10:20 PM",
+            address: "USA",
+            staterIndex: 2,
+            mainIndex: 2
+        })
+
+
+        let { name, openingHours, categories } = resturant;
+        console.log(name, openingHours, categories);
+
+        // new variables
+
+        let { name: resturantName, openingHours: hours, categories: tags } = resturant;
+        console.log(resturantName, hours, tags);
+
+        // default values
+
+        const { menu = [], starterMenu: starter = [] } = resturant;
+        console.log(menu, starter);
+
+        // mutating variables
+
+        let a = 100;
+        let b = 200;
+
+        let obj = { a: 1, b: 2, c: 3 };
+
+        ({ a, b } = obj);
+        console.log(a, b);
+
+        // nested objects
+
+        const { mon: { open: o, close: c } } = openingHours;
+        console.log(o, c);
+
+    </script>
+</body>
+
+</html>

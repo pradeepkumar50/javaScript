@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // unpacking arrays or objects into a bunch of variables is called destructing arrays or objects.
+        let data = ["pradeep", "kumar", "kairamkonda"];
+        let [a, b, c] = data;
+        console.log(a, b, c);
+        console.log(data);
+
+        const resturant = {
+            name: 'baymont',
+            location: '1811 faytee ave',
+            categories: ['indian', 'italian', 'bengali', 'nodia', 'french'],
+            starterMenu: ['chickentikka', 'garlic fry', 'mutton fry'],
+            mainMenu: ['pizza', 'pasta', 'bread', 'egg', 'mutton briyani'],
+            order: function (staterIndex, mainIndex) {
+                return [this.starterMenu[staterIndex], this.mainMenu[mainIndex]];
+            }
+        }
+
+        // getting data from resturant
+
+        let [first, second] = resturant.categories;
+        console.log(first, second);
+
+        // if you get data only first and third from array
+
+        let [x, , y] = resturant.mainMenu
+        console.log(x, y)  // expected output pizza, bread
+
+        // switching variables using destructing arrays
+
+        let [primary, secondary] = resturant.categories;
+        [primary, secondary] = [secondary, primary];
+        console.log(primary, secondary);
+
+        // Receving two values from function
+
+        //console.log(resturant.order(2, 0));
+        const [p, k] = resturant.order(2, 0);
+        console.log(p, k);
+
+        // nested destructting arrays
+
+        let nested = [1, 2, [3, 4, 5]];
+        /* let[s, ,t] = nested;
+        console.log(s,t); */
+
+        let [s, , [t, u, v]] = nested;
+        console.log(s, t, u, v);
+
+        // default values
+
+        let [e = 5, f = 8, g = 6, h = 3] = [8, 9];
+        console.log(e, f, g, h);
+    </script>
+</body>
+
+</html>

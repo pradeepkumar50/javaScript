@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const resturant = {
+            name: 'baymont',
+            location: '1811 faytee ave',
+            categories: ['indian', 'italian', 'bengali', 'nodia', 'french'],
+            starterMenu: ['chickentikka', 'garlic fry', 'mutton fry'],
+            mainMenu: ['pizza', 'pasta', 'bread', 'egg', 'mutton briyani'],
+            openingHours: {
+                mon: {
+                    open: "9AM",
+                    close: "9PM",
+                },
+                tues: {
+                    open: "9AM",
+                    close: "9PM",
+                },
+                wed: {
+                    open: "5PM",
+                    close: "6PM",
+                },
+            },
+            order: function (staterIndex, mainIndex) {
+                return [this.starterMenu[staterIndex], this.mainMenu[mainIndex]];
+            },
+            orderDelivery: function ({ time, address, staterIndex, mainIndex }) {
+                console.log(`order received ${this.starterMenu[staterIndex]} and ${this.mainMenu[mainIndex]} to ${address} at ${time}`);
+            },
+            orderPasta: function (item1, item2, item3) {
+                console.log(`The items is ready ${item1}, ${item2}, and ${item3}`);
+            }
+
+        };
+
+        let orderPastaResult = [
+            /*  prompt("enter item1"),
+             prompt("enter item2"),
+             prompt("enter item3") */
+        ];
+        console.log(orderPastaResult);
+
+        resturant.orderPasta(orderPastaResult[0], orderPastaResult[1], orderPastaResult[2],);
+        resturant.orderPasta(...orderPastaResult);
+
+        let arr = [1, 2, 3];
+        let arr2 = [4, 5, 6, arr[0], arr[1], arr[2]];
+        console.log(arr2);
+
+        let arr3 = [4, 5, ...arr];
+        console.log(arr3);
+
+        console.log(...arr3);  // elements get induviually.
+
+        let resMenu = [...resturant.categories, "pradeep"]; // creates new array
+        console.log(resMenu);
+
+        let resMenu2 = [...resturant.categories];
+        console.log(resMenu);
+
+        // copy array
+
+        let resMenu3 = [...resturant.categories];
+        let resMenu4 = [...resturant.starterMenu];
+
+        // joining 2 arrays
+        let output = [...resturant.categories, ...resturant.starterMenu];
+        console.log(output);
+
+        // iterables  are strings , arrays, maps, sets but not arrays
+
+        let str = "pradeep kumar kairamkonda";
+        let str2 = [...str];
+        console.log(str2);
+
+        // spread operator doesn't work on string literals
+
+        // objects are not iterables
+
+        let objData = { name: "pradeep", id: 495, ...resturant };
+        console.log(objData);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <script>
+      console.log(null == undefined);
+      console.log(NaN == NaN);
+      console.log(undefined == undefined);
+
+      let age =  Number(prompt("Enter your Number"));
+      console.log(typeof age, "age type is changed to number");
+      if(age === 18) {
+        console.log("its good");
+      } else {
+        console.log("its bad");
+      }
+  </script>
+</body>
+<!-- 
+ equality operators
+
+ === is strict equality operator
+ A strict equality operator === checks the equality without type conversion.
+ 0 === false returns false
+
+
+== is loose  equality operator
+== is itself do coercion 
+example 
+'18' == 18 returns true.
+
+
+-->
+</html>

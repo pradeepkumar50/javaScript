@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rest</title>
+</head>
+
+<body>
+    <script>
+        const resturant = {
+            name: 'baymont',
+            location: '1811 faytee ave',
+            categories: ['indian', 'italian', 'bengali', 'nodia', 'french'],
+            starterMenu: ['chickentikka', 'garlic fry', 'mutton fry'],
+            mainMenu: ['pizza', 'pasta', 'bread', 'egg', 'mutton briyani'],
+            openingHours: {
+                mon: {
+                    open: "9AM",
+                    close: "9PM",
+                },
+                tues: {
+                    open: "9AM",
+                    close: "9PM",
+                },
+                wed: {
+                    open: "5PM",
+                    close: "6PM",
+                },
+            },
+
+            order: function (staterIndex, mainIndex) {
+                return [this.starterMenu[staterIndex], this.mainMenu[mainIndex]];
+            },
+
+            orderDelivery: function ({ time, address, staterIndex, mainIndex }) {
+                console.log(`order received ${this.starterMenu[staterIndex]} and ${this.mainMenu[mainIndex]} to ${address} at ${time}`);
+            },
+
+            orderPasta: function (item1, item2, item3) {
+                console.log(`The items is ready ${item1}, ${item2}, and ${item3}`);
+            },
+
+            orderPizza: function(order1, ...order2) {
+                console.log(order1, "###");
+                console.log(order2, "***");
+            },
+        };
+
+        resturant.orderPizza("pradeep","kumar", 1, 2 , 3 , 4 , "athidi");
+
+        // Destructuring
+
+        // spread operator uses right hand side =
+
+        let arr = [1, 2, ...[3, 4, "pradeep"]];
+        console.log(arr);
+
+        // rest oper uses left hand side = 
+
+        let [a, b, c, ...remaining] = [1, 2, 3, 4, 5, 6, 7, 8, "pradeep kumar kairamkonda"];
+        console.log(a, b, c, remaining);
+
+        let [pizza, burger, ...otherFood] = [...resturant.categories, ...resturant.mainMenu]
+        console.log(pizza, burger, otherFood);
+
+        // objects
+
+        let { mon, ...weekdays } = resturant.openingHours;
+        console.log(weekdays);
+
+        // Functions
+
+        let num = function (...numbers) {
+            console.log(numbers)
+        }
+
+        num(1, 2, 3, 4, 5);
+        num(1, 2, 3, 4, 5, 6, 7, 8);
+
+
+    </script>
+</body>
+
+</html>

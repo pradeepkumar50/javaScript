@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const resturant = {
+            name: 'baymont',
+            location: '1811 faytee ave',
+            categories: ['indian', 'italian', 'bengali', 'nodia', 'french'],
+            starterMenu: ['chickentikka', 'garlic fry', 'mutton fry'],
+            mainMenu: ['pizza', 'pasta', 'bread', 'egg', 'mutton briyani'],
+            openingHours: {
+                mon: {
+                    open: "9AM",
+                    close: "9PM",
+                },
+                tues: {
+                    open: "9AM",
+                    close: "9PM",
+                },
+                wed: {
+                    open: "5PM",
+                    close: "6PM",
+                },
+            },
+
+            order: function (staterIndex, mainIndex) {
+                return [this.starterMenu[staterIndex], this.mainMenu[mainIndex]];
+            },
+
+            orderDelivery: function ({ time, address, staterIndex, mainIndex }) {
+                console.log(`order received ${this.starterMenu[staterIndex]} and ${this.mainMenu[mainIndex]} to ${address} at ${time}`);
+            },
+
+            orderPasta: function (item1, item2, item3) {
+                console.log(`The items is ready ${item1}, ${item2}, and ${item3}`);
+            },
+
+            orderPizza: function (order1, ...order2) {
+                console.log(order1, "###");
+                console.log(order2, "***");
+            },
+        };
+        // logical operators
+        // they can use any data type, return any data type , short circuiting
+
+        // || first opertand is truthy it will return first value
+
+        console.log(3 || "pradeep");
+        console.log('' || "pradeep");
+        console.log(true || 0);
+        console.log(null || undefined);
+        console.log(undefined || null || 0 || '' || 'kp' || 23 || null);
+
+        let guest1 = resturant.motelEngine ? resturant.categories : "you don't have such kind of property";
+        console.log(guest1);
+
+        let guest2 = resturant.categories ? "Yes you have categories property in resturant" : "no property";
+        console.log(guest2);
+
+        resturant.id = 495;
+        let guest3 = resturant.id || 496;
+        console.log(guest3);
+
+
+        // AND Operator returns the falsy value;
+
+        console.log(3 && 0);
+
+        // all  values are truthy it returns the last value
+
+        console.log(2 && 7 && 8 && 9 && 10); // returns 10
+        console.log(2 && 7 && 8 && 9 && null && 10);  // retuns null
+
+        if (resturant.categories) {
+            console.log("yes");
+        } else {
+            console.log("No")
+        };
+
+
+        let data = resturant.categories && resturant.mainMenu ? "yes" : "NO";
+        console.log(data);
+    </script>
+</body>
+
+</html>

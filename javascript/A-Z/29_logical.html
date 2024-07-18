@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logical</title>
+</head>
+
+<body>
+    <script>
+        const resturant = {
+            name: 'baymont',
+            location: '1811 faytee ave',
+            categories: ['indian', 'italian', 'bengali', 'nodia', 'french'],
+            starterMenu: ['chickentikka', 'garlic fry', 'mutton fry'],
+            mainMenu: ['pizza', 'pasta', 'bread', 'egg', 'mutton briyani'],
+            openingHours: {
+                mon: {
+                    open: "9AM",
+                    close: "9PM",
+                },
+                tues: {
+                    open: "9AM",
+                    close: "9PM",
+                },
+                wed: {
+                    open: "5PM",
+                    close: "6PM",
+                },
+            },
+
+            order: function (staterIndex, mainIndex) {
+                return [this.starterMenu[staterIndex], this.mainMenu[mainIndex]];
+            },
+
+            orderDelivery: function ({ time, address, staterIndex, mainIndex }) {
+                console.log(`order received ${this.starterMenu[staterIndex]} and ${this.mainMenu[mainIndex]} to ${address} at ${time}`);
+            },
+
+            orderPasta: function (item1, item2, item3) {
+                console.log(`The items is ready ${item1}, ${item2}, and ${item3}`);
+            },
+
+            orderPizza: function (order1, ...order2) {
+                console.log(order1, "###");
+                console.log(order2, "***");
+            },
+        };
+
+        let resturant2 = {
+            name: "pradeep",
+            guests: 20,
+            bottles: 0,
+        };
+
+        let resturant3 = {
+            name: "kairamkonda",
+            owner: "Umadevi",
+        };
+
+        console.log(resturant2, resturant3);
+
+        let data = resturant2.pizza ? "amazon" : "apple";
+        console.log(data);
+
+        let data2 = resturant2.guests || 100;
+        let data3 = resturant3.biryani || "zero";
+        console.log(data2, data3);
+
+        // nullish assignment operator (null or undefined)
+
+        let data4 = resturant2.bottles || 200;    // it returns 200 because 0  is a falsy value
+        console.log(data4);
+
+        let data5 = resturant2.bottles ?? 200;   //  it returns 0 now
+        console.log(data5);
+
+    </script>
+</body>
+
+</html>

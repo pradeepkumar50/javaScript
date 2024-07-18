@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set</title>
+</head>
+
+<body>
+    <script>
+
+        // sets is a collection of unique values
+        // set can never have a dublicate
+
+        let data = new Set(["pradeep", "kumar", "kairamkonda", "pradeep", "kumar", "kairamkonda"]);
+        console.log(data);
+
+        // strings also a iterable
+        console.log(new Set("pradeep"));
+
+        // size of set
+
+        console.log(data.size);
+
+        // has method
+
+        // if item is there it returns true else it returns false.
+
+        console.log(data.has("pradeep"));
+        console.log(data.has('reddy'));
+        // adds new elements to set
+
+        data.add("visa");
+        console.log(data);
+
+        // delete the element in set
+
+        data.delete('kumar');
+        console.log(data);
+
+        // There is no way of getting out from set
+        // no index way to take the value out
+
+        // deleting all elements of the set
+
+        /* data.clear();
+        console.log(data); */
+
+        // sets are iterable
+
+        for (let item of data) {
+            console.log(item);
+        };
+
+        let arr = ["a", "b", "c", "d", 22, 23, 22, "d"];
+        let removeDublicates = new Set(arr);
+        console.log(removeDublicates);
+
+        // in array
+
+        let removeDublicatesarray  = [...new Set(arr)];
+        console.log(removeDublicatesarray);
+
+
+
+    </script>
+</body>
+
+</html>

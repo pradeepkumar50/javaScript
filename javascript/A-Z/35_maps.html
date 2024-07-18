@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // map is a datastructure that we can use map values to keys
+        // In objects the keys are always string
+        // In in maps It can be any type of key
+
+        const rest = new Map();
+        console.log(rest);
+
+        rest.set('name', 'pradeep kumar kairamkonda');
+        rest.set(25, 'age');
+
+        rest.set('categories', ['pizza', 'burger', 'sandwidth', 'egg', 'donut', 'begals'])
+            .set(true, 'we are open on sunday')
+            .set(false, 'we are not open on monday')
+            .set('open', '9:30');
+        console.log(rest);
+
+        // we are get the values from map
+
+        console.log(rest.get(true));
+        console.log(rest.get('open'));
+
+        // methods
+        console.log(rest.has(25));
+        console.log(rest.delete(25));
+        console.log(rest);
+        console.log(rest.size);
+
+
+        console.log(rest.set([1, 2], 20));
+        console.log(rest.get([1, 2]));                    // This gets undefiend 
+
+
+        let arr = [3, 4];
+        console.log(rest.set(arr, 'pradeep'));
+        console.log(rest.get(arr));
+    </script>
+</body>
+
+</html>
